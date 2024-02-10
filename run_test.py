@@ -10,7 +10,7 @@ model = LlamaForCausalLM.from_pretrained(
     model_path, torch_dtype=torch.float16,
 ).to('cuda')
 
-prompt = 'Q: What is the largest animal?\nA:'
+prompt = 'Q: how many cities are listed in https://deutsche-giganetz.de/ausbau/ ?\nA:'
 input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to('cuda')
 
 generation_output = model.generate(
